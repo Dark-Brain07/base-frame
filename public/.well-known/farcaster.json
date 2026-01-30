@@ -1,0 +1,18 @@
+{
+    "accountAssociation": {
+        "header": "eyJmaWQiOjAsInR5cGUiOiJjdXN0b2R5Iiwia2V5IjoiMHgwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwIn0",
+        "payload": "eyJkb21haW4iOiJiYXNlLWZyYW1lLWdyZWVuLnZlcmNlbC5hcHAifQ",
+        "signature": "placeholder"
+    },
+    "frame": {
+        "version": "1",
+        "name": "Base Builder Poll",
+        "iconUrl": "https://base-frame-green.vercel.app/icon.png",
+        "homeUrl": "https://base-frame-green.vercel.app",
+        "imageUrl": "https://base-frame-green.vercel.app/api/image",
+        "buttonTitle": "Vote Now",
+        "splashImageUrl": "https://base-frame-green.vercel.app/api/image",
+        "splashBackgroundColor": "#0052FF",
+        "webhookUrl": "https://base-frame-green.vercel.app/api/vote"
+    }
+}
