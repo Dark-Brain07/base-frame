@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Base Builder Poll - Farcaster Frame</title>
+    
+    <!-- Frame Meta Tags -->
+    <meta property="fc:frame" content="vNext" />
+    <meta property="fc:frame:image" content="https://base-frame-poll.vercel.app/api/image" />
+    <meta property="fc:frame:image:aspect_ratio" content="1.91:1" />
+    <meta property="fc:frame:button:1" content="🔵 DeFi" />
+    <meta property="fc:frame:button:2" content="🎨 NFTs" />
+    <meta property="fc:frame:button:3" content="🎮 Gaming" />
+    <meta property="fc:frame:button:4" content="🤖 AI" />
+    <meta property="fc:frame:post_url" content="https://base-frame-poll.vercel.app/api/vote" />
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="What are you building on Base?" />
+    <meta property="og:description" content="Vote for your favorite Base development category!" />
+    <meta property="og:image" content="https://base-frame-poll.vercel.app/api/image" />
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #0052FF 0%, #0033A0 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        
+        .container {
+            text-align: center;
+            padding: 40px;
+            max-width: 600px;
+        }
+        
+        .logo {
+            width: 80px;
+            height: 80px;
+            background: white;
+            border-radius: 50%;
+            margin: 0 auto 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+            font-weight: 700;
+        }
+        
+        p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 32px;
+        }
+        
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+        
+        .btn {
+            padding: 16px 24px;
+            font-size: 1.1rem;
+            border: 2px solid white;
+            background: rgba(255,255,255,0.1);
+            color: white;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            background: white;
+            color: #0052FF;
+        }
+        
+        .stats {
+            background: rgba(255,255,255,0.15);
+            border-radius: 16px;
+            padding: 24px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .stats h3 {
+            margin-bottom: 16px;
+            font-size: 1.2rem;
+        }
+        
+        .stat-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .stat-row:last-child {
+            border-bottom: none;
+        }
+        
+        .bar {
+            height: 8px;
+            background: rgba(255,255,255,0.3);
+            border-radius: 4px;
+            margin-top: 4px;
+            overflow: hidden;
+        }
+        
+        .bar-fill {
+            height: 100%;
+            background: white;
+            border-radius: 4px;
+        }
+        
+        .footer {
+            margin-top: 32px;
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+        
+        .footer a {
+            color: white;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">🔵</div>
+        <h1>What are you building on Base?</h1>
+        <p>Vote for your favorite development category!</p>
+        
+        <div class="buttons">
+            <button class="btn">🔵 DeFi</button>
+            <button class="btn">🎨 NFTs</button>
+            <button class="btn">🎮 Gaming</button>
+            <button class="btn">🤖 AI</button>
+        </div>
+        
+        <div class="stats">
+            <h3>📊 Live Results</h3>
+            <div class="stat-row">
+                <span>DeFi</span>
+                <span id="defi-pct">38%</span>
+            </div>
+            <div class="bar"><div class="bar-fill" style="width: 38%"></div></div>
+            
+            <div class="stat-row">
+                <span>NFTs</span>
+                <span id="nft-pct">27%</span>
+            </div>
+            <div class="bar"><div class="bar-fill" style="width: 27%"></div></div>
+            
+            <div class="stat-row">
+                <span>Gaming</span>
+                <span id="gaming-pct">21%</span>
+            </div>
+            <div class="bar"><div class="bar-fill" style="width: 21%"></div></div>
+            
+            <div class="stat-row">
+                <span>AI</span>
+                <span id="ai-pct">14%</span>
+            </div>
+            <div class="bar"><div class="bar-fill" style="width: 14%"></div></div>
+        </div>
+        
+        <div class="footer">
+            Built with 💙 for <a href="https://base.org" target="_blank">Base</a> | 
+            <a href="https://warpcast.com" target="_blank">Share on Warpcast</a>
+        </div>
+    </div>
+</body>
+</html>
