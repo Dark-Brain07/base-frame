@@ -1,4 +1,6 @@
-// Vote counts stored in memory (use KV store in production)
+const FRAME_URL = 'https://base-frame-green.vercel.app';
+
+// Vote counts stored in memory
 let votes = {
     defi: 156,
     nfts: 112,
@@ -33,27 +35,21 @@ export default function handler(req, res) {
                 percentages[key] = Math.round((value / total) * 100);
             }
 
-            // Get voter FID
-            const fid = untrustedData?.fid || 'anonymous';
-
             // Return results frame
-            const resultsHtml = `
-<!DOCTYPE html>
+            const resultsHtml = `<!DOCTYPE html>
 <html>
 <head>
   <meta property="fc:frame" content="vNext" />
-  <meta property="fc:frame:image" content="https://base-frame-poll.vercel.app/api/results?defi=${percentages.defi}&nfts=${percentages.nfts}&gaming=${percentages.gaming}&ai=${percentages.ai}&voted=${votedCategory}&total=${total}" />
+  <meta property="fc:frame:image" content="${FRAME_URL}/api/results?defi=${percentages.defi}&nfts=${percentages.nfts}&gaming=${percentages.gaming}&ai=${percentages.ai}&voted=${votedCategory}&total=${total}" />
   <meta property="fc:frame:image:aspect_ratio" content="1.91:1" />
   <meta property="fc:frame:button:1" content="🔄 Vote Again" />
   <meta property="fc:frame:button:2" content="📊 Share Results" />
   <meta property="fc:frame:button:2:action" content="link" />
-  <meta property="fc:frame:button:2:target" content="https://warpcast.com/~/compose?text=I%20just%20voted%20on%20the%20Base%20Builder%20Poll!%20What%20are%20you%20building?%20🔵" />
-  <meta property="fc:frame:post_url" content="https://base-frame-poll.vercel.app/api/vote" />
+  <meta property="fc:frame:button:2:target" content="https://warpcast.com/~/compose?text=I%20just%20voted%20on%20the%20Base%20Builder%20Poll!%20What%20are%20you%20building?%20🔵&embeds[]=${encodeURIComponent(FRAME_URL)}" />
+  <meta property="fc:frame:post_url" content="${FRAME_URL}/api/vote" />
 </head>
 <body>
   <h1>Thanks for voting!</h1>
-  <p>You voted for: ${votedCategory.toUpperCase()}</p>
-  <p>Total votes: ${total}</p>
 </body>
 </html>`;
 

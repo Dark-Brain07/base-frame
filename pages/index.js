@@ -1,6 +1,7 @@
 import Head from 'next/head';
 
-const FRAME_URL = process.env.NEXT_PUBLIC_URL || 'https://base-frame-poll.vercel.app';
+// Use the deployed URL
+const FRAME_URL = 'https://base-frame-green.vercel.app';
 
 export default function Home() {
     return (
@@ -61,7 +62,6 @@ export default function Home() {
 
                     <div style={styles.footer}>
                         <p>Built with 💙 on Base</p>
-                        <p style={styles.credits}>For Talent Protocol Builder Rewards</p>
                     </div>
                 </div>
             </main>
@@ -148,9 +148,5 @@ const styles = {
     footer: {
         opacity: '0.7',
         fontSize: '0.9rem',
-    },
-    credits: {
-        fontSize: '0.8rem',
-        marginTop: '4px',
     },
 };
